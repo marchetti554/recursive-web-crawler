@@ -97,11 +97,11 @@ func addToQueue(url string, queue chan string) {
 		if !ok {
 			go func() {
 				Crawl(fixedUrl)
-			}()
-			go func() {
+
 				queue <- fixedUrl
 			}()
 		}
+
 		return true
 	})
 
